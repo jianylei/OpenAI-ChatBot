@@ -15,7 +15,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
   return (
     <div className='bg-white'>
-      <header className='absolute inset-x-0 top-0 z-50'>
+      <header className='absolute inset-x-0 top-0 z-40'>
         <nav
           className='flex items-center justify-between p-6 lg:px-8'
           aria-label='Global'>
