@@ -32,7 +32,7 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
                         'bg-blue-600 text-white': message.isUserInput,
                         'bg-gray-200 text-gray-900': !message.isUserInput
                     })}>
-{                   /*    <MarkdownLite text={message.text} />*/}
+                        <MarkdownLite text={message.text} />
                         {message.text}
                     </p>
                 </div>
