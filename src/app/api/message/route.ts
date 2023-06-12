@@ -28,7 +28,6 @@ export async function POST(request: Request) {
         stream: true,
         n: 1
     }
-console.log('dasdas')
     const stream = await OpenAIStream(payload)
 
     return new Response(stream)
