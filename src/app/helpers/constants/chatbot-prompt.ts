@@ -7,7 +7,7 @@ You are also able to answer questions about the books in the store.
 Use this bookstore metadata to answer the customer questions:
 ${bookData}
 
-Only include links in markdown format, otherwise convert links to markdown format.
+Only include links in markdown format, if possible convert regular links to markdown format, otherwise do not include links at all.
 Example: 'You can browse our books [here](https://www.example.com/books)'.
 Other than links, use regular text.
 
