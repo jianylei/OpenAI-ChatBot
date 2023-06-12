@@ -9,7 +9,7 @@ export interface ChatGPTMessage {
 
 export interface OpenAIStreamPayload {
     model: string,
-    message: ChatGPTMessage[],
+    messages: ChatGPTMessage[],
     temperature: number,
     top_p: number,
     frequency_penalty: number,
@@ -25,14 +25,14 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
 
     let counter = 0
 
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY ?? ""}`,
         },
-        body: JSON.stringify(payload)
-    })
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
 
     const stream = new ReadableStream({
         async start(controller) {
@@ -47,7 +47,7 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
                     try {
                         const json = JSON.parse(data)
                         const text = json.choices[0].delta?.content || ''
-                        console.log('text: ', text)
+                        console.log(text)
 
                         if (counter > 2 && (text.match(/\n/) || []).length) return
 

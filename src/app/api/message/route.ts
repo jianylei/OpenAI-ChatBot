@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     const payload: OpenAIStreamPayload = {
         model: 'gpt-3.5-turbo',
-        message: outboundMessages,
+        messages: outboundMessages,
         temperature: 0.4,
         top_p: 1,
         frequency_penalty: 0,
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         stream: true,
         n: 1
     }
-
+console.log('dasdas')
     const stream = await OpenAIStream(payload)
 
     return new Response(stream)
