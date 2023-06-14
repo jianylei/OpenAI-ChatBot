@@ -5,8 +5,8 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 const navigation = [
-  { name: 'Fantasy', href: '#' },
-  { name: 'Mystery', href: '#' },
+  { name: 'Home', href: '#' },
+  { name: 'Browse', href: '#' },
   { name: 'Returns', href: '#' },
   { name: 'About us', href: '#' },
 ]
@@ -20,19 +20,21 @@ export default function Home() {
           className='flex items-center justify-between p-6 lg:px-8'
           aria-label='Global'>
           <div className='flex lg:flex-1'>
-            <a href='#' className='-m-1.5 p-1.5'>
+            <a href='#' className='flex gap-1 items-center -m-1.5 p-1.5'>
               <span className='sr-only'>Your Company</span>
               <img
-                className='h-8 w-auto'
+                className='h-6 w-auto'
                 src='/book.png'
                 alt=''
               />
+              <h1 className='text-xl font-semibold leading-6 text-gray-900'>BookHub</h1>
             </a>
           </div>
           <div className='flex lg:hidden'>
             <button
               type='button'
-              className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'>
+              className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+              onClick={() => setMobileMenuOpen(true)}>
               <span className='sr-only'>Open main menu</span>
               <Menu className='h-6 w-6' aria-hidden='true' />
             </button>
@@ -63,13 +65,14 @@ export default function Home() {
           <div className='fixed inset-0 z-50' />
           <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
             <div className='flex items-center justify-between'>
-              <a href='#' className='-m-1.5 p-1.5'>
+              <a href='#' className='flex gap-1 items-center -m-1.5 p-1.5'>
                 <span className='sr-only'>Your Company</span>
                 <img
-                  className='h-8 w-auto'
-                  src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+                  className='h-6 w-auto'
+                  src='/book.png'
                   alt=''
                 />
+                <h1 className='text-xl font-semibold leading-6 text-gray-900'>BookHub</h1>
               </a>
               <button
                 type='button'
@@ -120,11 +123,11 @@ export default function Home() {
           <div className='mx-auto max-w-7xl px-6 lg:px-8'>
             <div className='mx-auto max-w-2xl text-center'>
               <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-                Your go-to bookstore for fantasy and mystery
+                Your go-to online bookstore
               </h1>
               <p className='mt-6 text-lg leading-8 text-gray-600'>
-                Bookbuddy is a small bookstore that specializes in fantasy and mystery
-                books. Find us here in San Diego or order online anytime.
+                BookHub is a bookstore local to Toronto - we carrying various genres of books.
+                Find us here in Toronto or order online anytime.
               </p>
               <div className='mt-10 flex items-center justify-center gap-x-6'>
                 <a
@@ -142,9 +145,9 @@ export default function Home() {
             <div className='mt-16 flow-root sm:mt-24'>
               <div className='relative -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                 <img
-                  src='/bookstore2.jpg'
+                  src='/bookstore.jpg'
                   alt='App screenshot'
-                  className='rounded-md shadow-2xl ring-1 ring-gray-900/10'
+                  className='h-96 w-full object-cover rounded-md shadow-2xl ring-1 ring-gray-900/10'
                 />
               </div>
             </div>
