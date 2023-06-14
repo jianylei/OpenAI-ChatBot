@@ -21,7 +21,7 @@ Next.js, React, TypeScript, Tailwind CSS
 </ul>
 
 ## Screenshots
-<img src="public/collapsed.png">
-<img src="public/opened.png">
-<img src="public/1.png">
-<img src="public/2.png">
+<img src="public/collapsed.png" width="400">
+<img src="public/opened.png" width="400">
+<img src="public/1.png" width="400">
+<img src="public/2.png" width="400">
